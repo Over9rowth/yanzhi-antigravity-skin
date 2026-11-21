@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "mode": "auto",
+  "font": "sans",
+  "fontSize": "15.5px",
+  "contextWarnTokens": 220000,
+  "features": {
+    "theme": true,
+    "metrics": true,
+    "i18n": true,
+    "toolbar": true
+  }
+}

@@ -1,0 +1,670 @@
+/* ============================================================================
+ * 砚纸研习 · YanZhi Study (Standalone Clean-Room Theme)
+ * MIT License · Copyright (c) 2026 Over9rowth
+ * ============================================================================ */
+
+:root {
+  --yz-font-sans: 'Anthropic Sans', 'Noto Sans SC', 'MiSans', 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+  --yz-font-serif: 'Anthropic Serif', 'Noto Serif SC', 'Source Han Serif SC', Georgia, serif;
+  --yz-font-mono: 'Cascadia Mono', 'Anthropic Mono', 'Cascadia Code', 'Noto Sans SC', Consolas, ui-monospace, monospace;
+  --yz-read-font: var(--yz-font-sans);
+  --yz-chat-font-size: 15.5px;
+}
+
+html[data-yz-font="serif"] {
+  --yz-read-font: var(--yz-font-serif);
+}
+
+:root,
+html,
+body,
+body[data-agy-font],
+body[data-agy-font="google-sans"],
+body[data-agy-font="inter"] {
+  --vscode-font-family: var(--yz-font-sans) !important;
+  --font-sans: var(--yz-font-sans) !important;
+  --default-font-family: var(--yz-font-sans) !important;
+
+  --editor-font-family: var(--yz-font-mono) !important;
+  --font-mono: var(--yz-font-mono) !important;
+  --default-mono-font-family: var(--yz-font-mono) !important;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* ----------------------------------------------------------------------------
+ * 1. 晨光竹纸 (Daylight Bamboo Paper)
+ * ---------------------------------------------------------------------------- */
+html,
+html[data-yz-mode="light"] {
+  color-scheme: light !important;
+
+  --yz-bg: #F6F4ED;
+  --yz-sidebar: #ECE9DF;
+  --yz-sidebar-secondary: #E2DFD3;
+  --yz-sidebar-muted: #E8E5DA;
+  --yz-card: #FBF9F4;
+  --yz-code-bg: #EFECE2;
+  --yz-callout-bg: #EDF2EC;
+  --yz-fg: #252724;
+  --yz-fg-strong: #1C1E1B;
+  --yz-muted: #5A5E56;
+  --yz-placeholder: #7D8178;
+  --yz-border: rgba(42, 48, 40, 0.14);
+  --yz-border-strong: rgba(42, 48, 40, 0.24);
+  --yz-accent: #3D6B52;
+  --yz-accent-hover: #335B45;
+  --yz-accent-fg: #FBF9F4;
+  --yz-accent-soft: rgba(61, 107, 82, 0.12);
+  --yz-accent-ring: rgba(61, 107, 82, 0.42);
+  --yz-link: #2F6887;
+  --yz-code-fg: #2B5943;
+  --yz-warn: #A8641D;
+  --yz-error: #B84A39;
+  --yz-shadow-composer: 0 6px 20px -4px rgba(37, 39, 36, 0.08), 0 2px 6px -1px rgba(37, 39, 36, 0.04);
+
+  --background: var(--yz-bg) !important;
+  --content: var(--yz-bg) !important;
+  --foreground: var(--yz-fg) !important;
+  --sidebar: var(--yz-sidebar) !important;
+  --sidebar-secondary: var(--yz-sidebar-secondary) !important;
+  --sidebar-muted: var(--yz-sidebar-muted) !important;
+  --sidebar-border: var(--yz-border) !important;
+  --vscode-sideBar-background: var(--yz-sidebar) !important;
+  --card: var(--yz-card) !important;
+  --card-border: var(--yz-border) !important;
+  --card-edge: var(--yz-border) !important;
+  --border: var(--yz-border) !important;
+  --sash-line: var(--yz-border) !important;
+  --secondary: rgba(42, 48, 40, 0.075) !important;
+  --secondary-foreground: var(--yz-fg) !important;
+  --muted: rgba(42, 48, 40, 0.055) !important;
+  --muted-foreground: var(--yz-muted) !important;
+  --placeholder: var(--yz-placeholder) !important;
+  --primary: var(--yz-accent) !important;
+  --primary-foreground: var(--yz-accent-fg) !important;
+  --link: var(--yz-link) !important;
+  --code-foreground: var(--yz-code-fg) !important;
+  --shell: var(--yz-sidebar) !important;
+  --glass: var(--yz-card) !important;
+  --glass-border: var(--yz-border) !important;
+  --glass-highlight: rgba(255, 255, 255, 0.7) !important;
+  --onyx-frame: var(--yz-sidebar) !important;
+  --onyx-well: var(--yz-code-bg) !important;
+  --onyx-raised: var(--yz-card) !important;
+  --onyx-selected: var(--yz-card) !important;
+  --onyx-key: var(--yz-card) !important;
+  --editor-code-block-background: var(--yz-code-bg) !important;
+  --focus-ring-color: var(--yz-accent-ring) !important;
+  --focus-ring-offset-color: var(--yz-bg) !important;
+  --home-glow: rgba(61, 107, 82, 0.08) !important;
+}
+
+/* ----------------------------------------------------------------------------
+ * 2. 夜读松烟 (Night Pine-Ink Slate)
+ * ---------------------------------------------------------------------------- */
+html[data-yz-mode="dark"],
+html:not([data-yz-mode="light"]):has(body.theme-dark) {
+  color-scheme: dark !important;
+
+  --yz-bg: #1B1D1A;
+  --yz-sidebar: #151714;
+  --yz-sidebar-secondary: #222520;
+  --yz-sidebar-muted: #1D201B;
+  --yz-card: #232622;
+  --yz-code-bg: #141613;
+  --yz-callout-bg: #202822;
+  --yz-fg: #DDD9CE;
+  --yz-fg-strong: #EAE6DC;
+  --yz-muted: #9D9C92;
+  --yz-placeholder: #7D7C73;
+  --yz-border: rgba(221, 217, 206, 0.13);
+  --yz-border-strong: rgba(221, 217, 206, 0.24);
+  --yz-accent: #6CA584;
+  --yz-accent-hover: #7DB695;
+  --yz-accent-fg: #141613;
+  --yz-accent-soft: rgba(108, 165, 132, 0.16);
+  --yz-accent-ring: rgba(108, 165, 132, 0.48);
+  --yz-link: #7EB8D8;
+  --yz-code-fg: #8EC4A3;
+  --yz-warn: #D99B52;
+  --yz-error: #E07A68;
+  --yz-shadow-composer: 0 8px 24px -4px rgba(0, 0, 0, 0.42), 0 2px 6px -1px rgba(0, 0, 0, 0.24);
+
+  --background: var(--yz-bg) !important;
+  --content: var(--yz-bg) !important;
+  --foreground: var(--yz-fg) !important;
+  --sidebar: var(--yz-sidebar) !important;
+  --sidebar-secondary: var(--yz-sidebar-secondary) !important;
+  --sidebar-muted: var(--yz-sidebar-muted) !important;
+  --sidebar-border: var(--yz-border) !important;
+  --vscode-sideBar-background: var(--yz-sidebar) !important;
+  --card: var(--yz-card) !important;
+  --card-border: var(--yz-border) !important;
+  --card-edge: var(--yz-border) !important;
+  --border: var(--yz-border) !important;
+  --sash-line: var(--yz-border) !important;
+  --secondary: rgba(221, 217, 206, 0.09) !important;
+  --secondary-foreground: var(--yz-fg) !important;
+  --muted: rgba(221, 217, 206, 0.065) !important;
+  --muted-foreground: var(--yz-muted) !important;
+  --placeholder: var(--yz-placeholder) !important;
+  --primary: var(--yz-accent) !important;
+  --primary-foreground: var(--yz-accent-fg) !important;
+  --link: var(--yz-link) !important;
+  --code-foreground: var(--yz-code-fg) !important;
+  --shell: var(--yz-sidebar) !important;
+  --glass: var(--yz-card) !important;
+  --glass-border: var(--yz-border) !important;
+  --glass-highlight: rgba(255, 255, 255, 0.05) !important;
+  --onyx-frame: var(--yz-sidebar) !important;
+  --onyx-well: var(--yz-code-bg) !important;
+  --onyx-raised: var(--yz-card) !important;
+  --onyx-selected: #2A2E28 !important;
+  --onyx-key: #2A2E28 !important;
+  --editor-code-block-background: var(--yz-code-bg) !important;
+  --focus-ring-color: var(--yz-accent-ring) !important;
+  --focus-ring-offset-color: var(--yz-bg) !important;
+  --home-glow: rgba(108, 165, 132, 0.08) !important;
+}
+
+/* ----------------------------------------------------------------------------
+ * 3. 全局底色、字体平滑、侧栏与分隔线
+ * ---------------------------------------------------------------------------- */
+html,
+body {
+  font-family: var(--yz-font-sans) !important;
+  background-color: var(--yz-bg) !important;
+  color: var(--yz-fg) !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  accent-color: var(--yz-accent);
+  scrollbar-color: var(--yz-border-strong) transparent;
+}
+
+button,
+select,
+nav,
+header,
+aside {
+  font-family: var(--yz-font-sans) !important;
+}
+
+.bg-sidebar,
+aside {
+  background-color: var(--yz-sidebar) !important;
+}
+
+.bg-background,
+[data-main-content-body] {
+  background-color: var(--yz-bg) !important;
+  color: var(--yz-fg) !important;
+}
+
+.bg-card {
+  background-color: var(--yz-card) !important;
+}
+
+.agy-inset-shell {
+  --card-edge: var(--yz-border) !important;
+  --sash-line: var(--yz-border) !important;
+}
+
+.agy-sheet[data-sheet-inset] [data-main-content-body]::after,
+.agy-inset-shell [data-side-panel-body]::after,
+[data-main-content-body]::after {
+  box-shadow: inset 0 0 0 1px var(--yz-border) !important;
+}
+
+.bg-border {
+  background-color: var(--yz-border) !important;
+}
+
+.bg-sidebar a,
+.bg-sidebar button,
+aside a,
+aside button {
+  color: var(--yz-fg) !important;
+  border-color: var(--yz-border) !important;
+}
+
+[data-testid="conversation-row-sidebar"]:not([data-selected="true"]) span.truncate {
+  font-weight: 400;
+  color: var(--yz-fg) !important;
+}
+
+[data-testid="conversation-row-sidebar"][data-selected="true"],
+[data-testid="conversation-row-sidebar"][data-selected="true"] span {
+  font-weight: 600 !important;
+  color: var(--yz-fg-strong) !important;
+}
+
+/* ----------------------------------------------------------------------------
+ * 4. 正文阅读排版、代码块与 KaTeX 公式保护
+ * ---------------------------------------------------------------------------- */
+.select-text:not(.katex):not(.katex *),
+.prose:not(.katex):not(.katex *),
+.markdown:not(.katex):not(.katex *),
+article:not(.katex):not(.katex *) {
+  font-family: var(--yz-read-font) !important;
+  letter-spacing: 0.005em;
+  color: var(--yz-fg);
+}
+
+.select-text :is(p, li, blockquote, h1, h2, h3, h4, h5, h6, strong, em, span, div):not(.katex):not(.katex *):not(code):not(pre):not(kbd):not(samp):not(.font-mono) {
+  font-family: var(--yz-read-font) !important;
+  letter-spacing: 0.005em;
+}
+
+.select-text.text-base,
+.select-text.whitespace-pre-wrap,
+.prose,
+.markdown {
+  font-size: var(--yz-chat-font-size, 15.5px) !important;
+  line-height: 1.72 !important;
+}
+
+.select-text :is(p, li) {
+  line-height: 1.72 !important;
+}
+
+.select-text blockquote {
+  background-color: var(--yz-callout-bg) !important;
+  border-left: 3px solid var(--yz-accent) !important;
+  border-radius: 0 8px 8px 0;
+  padding: 8px 14px !important;
+  margin: 10px 0 !important;
+  color: var(--yz-fg) !important;
+}
+
+code,
+pre,
+kbd,
+samp,
+.font-mono,
+[class*="language-"],
+.monaco-editor,
+.xterm,
+pre *,
+[class*="group/file-title"],
+[class*="group/file-title"] *,
+[class*="file-title"],
+[class*="file-path"],
+.tabular-nums {
+  font-family: var(--yz-font-mono) !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.select-text pre,
+.prose pre,
+.markdown pre {
+  background-color: var(--yz-code-bg) !important;
+  border: 1px solid var(--yz-border) !important;
+  border-radius: 10px !important;
+  line-height: 1.62 !important;
+}
+
+.select-text code:not(pre > code) {
+  background-color: var(--yz-accent-soft) !important;
+  color: var(--yz-code-fg) !important;
+  border-radius: 4px !important;
+  padding: 1px 5px !important;
+  font-size: 0.9em !important;
+}
+
+.select-text .katex,
+.prose .katex,
+.markdown .katex {
+  letter-spacing: normal !important;
+  color: var(--yz-fg-strong) !important;
+}
+
+.select-text .katex .text,
+.select-text .katex .text * {
+  font-family: var(--yz-read-font) !important;
+}
+
+/* ----------------------------------------------------------------------------
+ * 5. 输入框、工具栏与发送按钮
+ * ---------------------------------------------------------------------------- */
+#antigravity\.agentSidePanelInputBox,
+[id="antigravity.agentSidePanelInputBox"],
+.surface-composer.bg-card-border {
+  background-color: var(--yz-sidebar) !important;
+  border: 1.5px solid var(--yz-border) !important;
+  box-shadow: none !important;
+  transition: border-color 180ms ease, box-shadow 180ms ease !important;
+}
+
+#antigravity\.agentSidePanelInputBox:hover,
+[id="antigravity.agentSidePanelInputBox"]:hover,
+#antigravity\.agentSidePanelInputBox:focus-within,
+[id="antigravity.agentSidePanelInputBox"]:focus-within,
+.surface-composer.bg-card-border:hover,
+.surface-composer.bg-card-border:focus-within {
+  border-color: var(--yz-accent) !important;
+  box-shadow: 0 0 0 3px var(--yz-accent-soft) !important;
+}
+
+.surface-composer-card.bg-card,
+[id="antigravity.agentSidePanelInputBox"] .surface-composer-card,
+[id="antigravity.agentSidePanelInputBox"] > div.bg-card {
+  background-color: var(--yz-card) !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+}
+
+[id="antigravity.agentSidePanelInputBox"]:focus-within .surface-composer-card {
+  box-shadow: var(--yz-shadow-composer) !important;
+}
+
+div[contenteditable="true"],
+textarea,
+div[contenteditable="true"] :is(p, span, div),
+[data-composer],
+.ProseMirror,
+.ProseMirror :is(p, span) {
+  font-family: var(--yz-font-sans) !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0.005em !important;
+  color: var(--yz-fg) !important;
+}
+
+#antigravity\.agentSidePanelInputBox button[data-testid="send-button"],
+#antigravity\.agentSidePanelInputBox [data-testid="voice-live-pill"],
+button[data-testid="send-button"],
+[data-testid="voice-live-pill"] {
+  background-color: var(--yz-accent) !important;
+  color: var(--yz-accent-fg) !important;
+  border: 1px solid var(--yz-accent) !important;
+}
+
+#antigravity\.agentSidePanelInputBox button[data-testid="send-button"]:hover,
+#antigravity\.agentSidePanelInputBox [data-testid="voice-live-pill"]:hover {
+  background-color: var(--yz-accent-hover) !important;
+  border-color: var(--yz-accent-hover) !important;
+}
+
+#antigravity\.agentSidePanelInputBox button[data-testid="send-button"] *,
+#antigravity\.agentSidePanelInputBox [data-testid="voice-live-pill"] * {
+  color: var(--yz-accent-fg) !important;
+  fill: var(--yz-accent-fg) !important;
+}
+
+[data-testid="voice-live-pill"] .opacity-0,
+[data-testid="voice-live-pill"] [class*="opacity-0"],
+[data-testid="voice-live-pill"] [class*="opacity-0"] * {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  display: none !important;
+}
+
+[data-testid="voice-live-pill"] .opacity-100,
+[data-testid="voice-live-pill"] [class*="opacity-100"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+/* ----------------------------------------------------------------------------
+ * 6. 菜单、设置弹窗与侧栏快捷条
+ * ---------------------------------------------------------------------------- */
+[role="menu"],
+[role="dialog"],
+[data-radix-menu-content],
+.agy-overlay {
+  background-color: var(--yz-card) !important;
+  color: var(--yz-fg) !important;
+  border-color: var(--yz-border) !important;
+  font-family: var(--yz-font-sans) !important;
+}
+
+#yz-study-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 6px 8px;
+  margin: 4px 0 6px;
+  border-radius: 10px;
+  background-color: var(--yz-card);
+  border: 1px solid var(--yz-border);
+  font-family: var(--yz-font-sans) !important;
+  font-size: 11.5px;
+  color: var(--yz-fg);
+}
+
+#yz-study-toolbar .yz-btn-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+#yz-study-toolbar button {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 7px;
+  border-radius: 6px;
+  font-family: var(--yz-font-sans) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  color: var(--yz-muted) !important;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+#yz-study-toolbar button:hover {
+  background-color: var(--yz-accent-soft) !important;
+  color: var(--yz-fg) !important;
+}
+
+#yz-study-toolbar button[data-active="true"] {
+  background-color: var(--yz-accent) !important;
+  color: var(--yz-accent-fg) !important;
+}
+
+/* ----------------------------------------------------------------------------
+ * 7. 砚纸研习特色微胶囊 (#yz-metrics-pill) 与双区详单 (#yz-metrics-tooltip)
+ * ---------------------------------------------------------------------------- */
+#yz-metrics-pill {
+  position: relative;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  flex: 0 1 auto;
+  max-width: max-content;
+  min-width: 0;
+  height: 24px;
+  margin: 0 4px 0 6px;
+  padding: 0 9px 0 7px;
+  border-radius: 999px;
+  background-color: var(--yz-sidebar);
+  border: 1px solid var(--yz-border);
+  font-family: var(--yz-font-mono) !important;
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--yz-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease;
+}
+
+#yz-metrics-pill:hover {
+  color: var(--yz-fg-strong);
+  border-color: var(--yz-accent);
+  background-color: var(--yz-callout-bg);
+}
+
+#yz-metrics-pill.yz-pill-wrapped {
+  flex: 0 0 auto;
+  width: fit-content;
+  max-width: calc(100% - 12px);
+  height: 22px;
+  margin: 4px 6px 2px;
+  padding: 0 9px 0 7px;
+}
+
+#yz-metrics-pill .yz-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background-color: var(--yz-accent);
+  flex-shrink: 0;
+}
+
+#yz-metrics-pill .yz-m-sep {
+  opacity: 0.35;
+}
+
+#yz-metrics-pill .yz-ctx-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#yz-metrics-pill .yz-ctx-track {
+  width: 24px;
+  height: 4px;
+  border-radius: 999px;
+  background-color: var(--yz-border-strong);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+#yz-metrics-pill .yz-ctx-fill {
+  height: 100%;
+  border-radius: 999px;
+  background-color: var(--yz-accent);
+  transition: width 220ms ease;
+}
+
+#yz-metrics-pill[data-ctx-level="warn"] .yz-ctx-fill {
+  background-color: var(--yz-warn);
+}
+
+#yz-metrics-pill[data-ctx-level="crit"] .yz-ctx-fill {
+  background-color: var(--yz-error);
+}
+
+#yz-metrics-pill[data-ctx-level="warn"] .yz-m-ctx {
+  color: var(--yz-warn);
+  font-weight: 600;
+}
+
+#yz-metrics-pill[data-ctx-level="crit"] .yz-m-ctx {
+  color: var(--yz-error);
+  font-weight: 700;
+}
+
+#yz-metrics-tooltip {
+  position: fixed;
+  z-index: 2147483647;
+  min-width: 325px;
+  max-width: 430px;
+  padding: 11px 13px;
+  border-radius: 12px;
+  background-color: var(--yz-card);
+  border: 1px solid var(--yz-border-strong);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  font-family: var(--yz-font-mono) !important;
+  font-variant-numeric: tabular-nums;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--yz-fg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+#yz-metrics-tooltip[data-visible="true"] {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#yz-metrics-tooltip .yz-tt-hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--yz-fg-strong);
+  border-bottom: 1px solid var(--yz-border);
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+}
+
+#yz-metrics-tooltip .yz-tt-sec-title {
+  font-family: var(--yz-font-sans) !important;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--yz-accent);
+  margin: 2px 0 4px;
+}
+
+#yz-metrics-tooltip .yz-tt-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+#yz-metrics-tooltip .yz-tt-lbl {
+  color: var(--yz-muted);
+  font-family: var(--yz-font-sans) !important;
+}
+
+#yz-metrics-tooltip .yz-tt-val {
+  color: var(--yz-fg-strong);
+  font-weight: 500;
+  text-align: right;
+}
+
+#yz-metrics-tooltip .yz-tt-accent {
+  color: var(--yz-accent);
+  font-weight: 600;
+}
+
+#yz-metrics-tooltip .yz-tt-warn {
+  color: var(--yz-error);
+  font-weight: 600;
+}
+
+#yz-metrics-tooltip .yz-tt-div {
+  height: 1px;
+  background: var(--yz-border);
+  margin: 7px 0;
+}
+
+#yz-metrics-tooltip .yz-tt-bar-track {
+  width: 100%;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--yz-border);
+  overflow: hidden;
+  margin: 4px 0 2px;
+}
+
+#yz-metrics-tooltip .yz-tt-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--yz-accent);
+}
+
+#yz-metrics-tooltip .yz-tt-bar-fill[data-warn="true"] {
+  background: var(--yz-error);
+}
